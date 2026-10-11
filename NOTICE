@@ -1,0 +1,47 @@
+bacnet-sim (a simulated BACnet/IP device, in Go)
+Copyright 2026 Abhinav Gautam
+
+This module is licensed under the Apache License, Version 2.0 (LICENSE).
+
+The code was written for SigmaM2M, a oneM2M platform, from ANSI/ASHRAE
+Standard 135-2024 (PROVENANCE.md). It contains no code from other
+projects. The source files that come from SigmaM2M carry no per-file
+copyright header (the convention of the code they come from); the
+copyright line above covers them. Files added for this module carry
+"Copyright 2026 Abhinav Gautam" and "SPDX-License-Identifier: Apache-2.0".
+
+ANSI/ASHRAE Standard 135-2024 is a copyrighted ASHRAE standard; it is
+not redistributed and no text of it is reproduced.
+
+Trademarks
+----------
+
+BACnet is a registered trademark of ASHRAE. It is used here only to name
+the protocol the simulator speaks. This project is not affiliated with,
+sponsored or endorsed by ASHRAE or BACnet International, and makes no
+claim of BACnet conformance.
+
+Dependencies
+------------
+
+- github.com/cB-Sigma/bacnet (Apache-2.0, Copyright 2026 Abhinav
+  Gautam): the codec the simulator is built on.
+- github.com/cB-Sigma/tlsx, github.com/coder/websocket, golang.org/x/crypto
+  and golang.org/x/sys, through bacnet (licences in bacnet's NOTICE).
+- The Go standard library (BSD-3-Clause, Copyright The Go Authors).
+
+Interop test peer (interop/, not part of the module's packages)
+---------------------------------------------------------------
+
+The nested test-only module interop/ builds bacnet-stack 1.6.1
+(https://github.com/bacnet-stack/bacnet-stack, Copyright Steve Karg and
+contributors, GPL-2.0 with the GCC linking exception) from its sources
+in a Docker container on the tester's machine and runs its client tools
+as separate processes. No bacnet-stack source or binary is included in
+this repository; the image is not distributed.
+
+Test data
+---------
+
+Every address, device instance and value in this module is a made-up
+demo value; none belongs to a real installation.
